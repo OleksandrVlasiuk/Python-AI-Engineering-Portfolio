@@ -1,29 +1,32 @@
-# Python-AI-Engineering-Portfolio
-My Python &amp; AI Engineering Portfolio containing academic and practical projects.
+# 👨‍💻 Oleksandr Vlasiuk | Software Engineer & AI Student
 
-## 📂 Repository Structure
-
-### 1. [FastAPI & Docker Deployment](./01_FastAPI_Docker_Deployment)
-* **Description:** Deployed a deep learning model as a RESTful API.
-* **Tech Stack:** Python, FastAPI, Docker, TensorRT.
-
-### 2. [RAG & LLM Integrations](./02_RAG_and_LLM)
-* **Description:** Practical implementations and testing of Retrieval-Augmented Generation (RAG) systems.
-* **Tech Stack:** Python, LLMs, Vector Search.
-
-### 3. [Machine Learning & Exploratory Data Analysis (EDA)](./03_Machine_Learning_and_EDA)
-* **Description:** Comprehensive data processing, visualization, and building neural networks. Includes transfer learning and hyperparameter optimization.
-* **Tech Stack:** Pandas, TensorFlow, PyTorch, MLflow, Optuna.
-
-### 4. [Algorithms & Mathematical Modeling](./04_Algorithms_and_Math)
-* **Description:** Implementation of complex algorithms, evolutionary algorithms, cryptography, and mathematical corrections (e.g., Z-coordinate projections for computer vision).
-* **Tech Stack:** Python, NumPy.
-
-## 🛠️ General Tech Stack
-* **Languages:** Python
-* **Backend:** FastAPI
-* **Data & AI:** Pandas, TensorFlow, PyTorch, Jupyter
-* **Infrastructure:** Docker, Google Cloud services
+Computer Science student, Software Engineer, and enthusiast for **AI Engineering & Distributed Systems**.
+Я захоплююсь побудовою високонавантажених систем та впровадженням ML-моделей у реальні продукти.
 
 ---
-*Created by Oleksandr Vlasiuk*
+
+### 🚀 Моя спеціалізація
+* **Backend:** FastAPI, Microservices, Distributed Systems.
+* **AI/ML:** PyTorch, TensorFlow, LLM, RAG, ONNX optimization.
+* **Engineering:** Algorithmic optimization, Cryptography, MLOps.
+
+---
+
+### 📂 Репозиторії проєктів
+
+| Категорія | Ключові технології |
+| :--- | :--- |
+| **01_production** | Docker, FastAPI, Microservices, Nginx |
+| **02_machine_learning** | PyTorch, MLflow, Optuna, RAG (LangChain) |
+| **03_computer_vision** | OpenCV, CNN, Fourier Transform, ONNX |
+| **05_math_and_graphics** | Numerical Methods, Computational Geometry |
+| **07_software_tools** | Algorithms, OOP, Parser Development |
+
+---
+
+### 📬 Контакти
+* **LinkedIn:** [ linkedin.com/in/твоє-ім'я ](https://www.linkedin.com/in/alex-vlasiuk/)
+* **Email:** [ надіслати лист ](mailto:alexvlas111@gmail.com)
+
+---
+*Open to challenging opportunities in Backend Development and AI Engineering.*

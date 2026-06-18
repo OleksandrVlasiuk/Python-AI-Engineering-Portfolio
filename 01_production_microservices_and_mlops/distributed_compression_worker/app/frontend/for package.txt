@@ -1,0 +1,2 @@
+"start": "react-scripts start",
+"start": "export PORT=80 && react-scripts start",

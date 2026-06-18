@@ -1,0 +1,155 @@
+version: "3.1"
+
+services:
+  db:
+    image: mysql:8.0.34
+    restart: always
+    container_name: db
+    environment:
+      MYSQL_DATABASE: encode_your_text
+      MYSQL_USER: user
+      MYSQL_PASSWORD: '1qAz$w2*f34fsd'
+      MYSQL_ROOT_PASSWORD: 'uTnw0PIh65_!'
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=caching_sha2_password
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:3306" ]
+      interval: 3s
+      timeout: 30s
+      retries: 30
+    volumes:
+      - db_data_storage:/var/lib/mysql
+    networks:
+      - app-network
+
+  fordbinitialization:
+    build: ./backend
+    container_name: fordbinitialization
+    environment:
+      DB_HOST: db
+      DB_NAME: encode_your_text
+      DB_USER: root
+      DB_PASS: 'uTnw0PIh65_!'
+      DB_PORT: 3306
+    ports:
+      - "8089:8089"
+    depends_on:
+      - db
+    networks:
+      - app-network
+    command: sh -c "sleep 25 && alembic upgrade head"
+
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_NAME: encode_your_text
+      DB_USER: root
+      DB_PASS: 'uTnw0PIh65_!'
+      DB_PORT: 3306
+      MAX_LENGTH: 15000
+      EMAIL_ADDRESS: 'encodeyourtext@gmail.com'
+      FRONTEND_URL: 'http://localhost:80/'
+      EMAIL_PASSWORD: 'zvoi tdxm cope dvkp'
+      JWT_SECRET_KEY: 'FOJDI&@#*UFDJ'
+      JWT_REFRESH_SECRET_KEY: 'IO*U$#@UFIDSJFLK'
+      JWT_VERIFICATION_SECRET_KEY: 'IO#U@FJKLDS!@#@!'
+    ports:
+      - "8082:8082"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    environment:
+      REACT_APP_API_URL: 'http://localhost:8082/'
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+      - backend
+    networks:
+      - app-network
+
+  adminer:
+    image: adminer:4.8.1
+    container_name: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      ADMINER_DEFAULT_SERVER: backend
+      PMA_HOST: backend
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+#  worker1:
+#    build: ./worker
+#    container_name: worker1
+#    restart: always
+#    environment:
+#      DB_HOST: db
+#      DB_NAME: encode_your_text
+#      DB_USER: root
+#      DB_PASS: 'uTnw0PIh65_!'
+#      DB_PORT: 3306
+#      API_URL: http://backend:8082/
+#    ports:
+#      - "8084:8084"
+#    depends_on:
+#      - db
+#      - backend
+#    networks:
+#      - app-network
+#
+#  worker2:
+#    build: ./worker
+#    container_name: worker2
+#    restart: always
+#    environment:
+#      DB_HOST: db
+#      DB_NAME: encode_your_text
+#      DB_USER: root
+#      DB_PASS: 'uTnw0PIh65_!'
+#      DB_PORT: 3306
+#      API_URL: http://backend:8082/
+#    ports:
+#      - "8085:8085"
+#    depends_on:
+#      - db
+#      - backend
+#    networks:
+#      - app-network
+
+  worker:
+    build: ./worker
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_NAME: encode_your_text
+      DB_USER: root
+      DB_PASS: 'uTnw0PIh65_!'
+      DB_PORT: 3306
+      API_URL: http://backend:8082/
+    deploy:
+      mode: replicated
+      replicas: 3
+    depends_on:
+      - db
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  db_data_storage:
+
+networks:
+  app-network:

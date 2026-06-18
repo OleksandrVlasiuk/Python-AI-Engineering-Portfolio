@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+venv/
+.env
+.ipynb_checkpoints/
+test_execution_report.log
+logs.txt
+Formatted_images/
+Differences/
+.idea/

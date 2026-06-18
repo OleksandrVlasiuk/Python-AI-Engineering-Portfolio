@@ -1,0 +1,15 @@
+FROM python:3.9
+
+RUN mkdir /code
+
+WORKDIR /code
+ 
+# Copy the requirements file and install Python dependencies
+COPY ./requirements.txt /code/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+
+COPY . .
+
+CMD ["python", "main.py"]

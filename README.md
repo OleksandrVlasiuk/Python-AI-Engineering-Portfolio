@@ -19,7 +19,9 @@ Computer Science student, Software Engineer, and enthusiast for **AI Engineering
 | **01_production** | Docker, FastAPI, Microservices, Nginx |
 | **02_machine_learning** | PyTorch, MLflow, Optuna, RAG (LangChain) |
 | **03_computer_vision** | OpenCV, CNN, Fourier Transform, ONNX |
+| **04_data_engineering** | BigQuery, ETL-pipelines, Data Cleaning |
 | **05_math_and_graphics** | Numerical Methods, Computational Geometry |
+| **06_cryptography** | Stream Ciphers (BBS, LFSR), Hill, ElGamal |
 | **07_software_tools** | Algorithms, OOP, Parser Development |
 
 ---

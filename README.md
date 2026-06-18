@@ -25,8 +25,8 @@ Computer Science student, Software Engineer, and enthusiast for **AI Engineering
 ---
 
 ### 📬 Контакти
-* **LinkedIn:** [ linkedin.com/in/твоє-ім'я ](https://www.linkedin.com/in/alex-vlasiuk/)
-* **Email:** [ надіслати лист ](mailto:alexvlas111@gmail.com)
+* **LinkedIn:** https://www.linkedin.com/in/alex-vlasiuk
+* **Email:** alexvlas111@gmail.com
 
 ---
 *Open to challenging opportunities in Backend Development and AI Engineering.*
